@@ -1,0 +1,24 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="header" *ngIf="componentflag && flag">Watchlist is Empty</div>
+<div class="buttonclass" *ngIf="componentflag && flag">
+    <div class="btnclass"><button id="addtowatchlistbtn" class="addwatchlist" routerLink="/movies">Add movie to Watchlist</button></div>
+    <div class="btnclass"><button id="addtvshowtowatchlistbtn" class="addwatchlist" routerLink="/tvshows">Add tvshow to Watchlist</button></div>
+</div>
+<h1 id="header1" *ngIf="componentflag && watchlistdata.length != 0">Movie Watchlist🤩</h1>
+<div class="mainContainer" *ngIf="componentflag && watchlistdata.length != 0">
+    <div class="movieData" *ngFor="let data of watchlistdata">
+        <img src="https://image.tmdb.org/t/p/w500{{data.poster_path}}">
+        <div style="text-align: center; font-size: larger;">{{data.title}}</div>
+        <button id="removeFromWatchlist" (click)="removeFromwatchlist(data)">Remove From Watchlist</button>
+        
+    </div>
+</div>
+
+<h1 id="header2" *ngIf="componentflag && tvshowwatchlist.length != 0">Tv Show Watchlist😍</h1>
+<div class="mainContainer" *ngIf="componentflag && tvshowwatchlist.length != 0">
+    <div class="movieData" *ngFor="let data of tvshowwatchlist">
+        <img src="https://image.tmdb.org/t/p/w500{{data.poster_path}}">
+        <div style="text-align: center; font-size: larger;">{{data.original_name}}</div>
+        <button id="removeFromtvWatchlist" (click)="removeFromTvwatchlist(data)">Remove From Watchlist</button>
+    </div>
+</div>

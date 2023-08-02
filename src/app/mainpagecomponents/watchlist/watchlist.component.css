@@ -1,0 +1,64 @@
+h1{
+    color: white;
+    margin: 20px 50px;
+}
+.mainContainer{
+    margin: 30px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 40px
+}
+.movieData{
+    width: 250px;
+    color: aliceblue;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    font-size: 16px;
+    gap: 10px;
+}
+.movieData > img{
+    width: 250px;
+}
+
+.movieData > button{
+    width: 180px;
+    background-color: aqua;
+    padding: 5px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.movieData > button:hover{
+    background-color: rgb(92, 188, 233);
+}
+
+.addwatchlist{
+    background-color: aqua;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.addwatchlist:hover{
+    background-color: rgb(92, 188, 233);
+}
+
+.buttonclass{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+
+.btnclass{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 26px;
+    text-align: center;
+}

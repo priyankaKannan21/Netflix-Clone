@@ -1,0 +1,47 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<!-- <c-carousel [interval]="1" *ngIf="flag">
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of allmoviedata">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{slide.poster_path}}"
+          alt="{{slide.title}}"
+          class="d-block w-100"
+          loading="lazy"
+        />
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel> -->
+<div class="flexrow" *ngIf="flag">
+    <div class="filterByType">
+        <label id="header">Filter By:</label>
+        <select id="movies" name="movies" (change)="filterMovie($any($event.target).value)">
+            <option [value]="data.name" *ngFor="let data of optionvalue">{{data.name}}</option>      
+        </select>
+    </div>
+    <div class="buttonNextPrevious">
+        <button id="previous" (click)="Previousdata()">Previous</button>
+        <button id="next" (click)="Nextdata()">Next</button>
+    </div>
+</div>
+<div class="mainContainer" *ngIf="flag">
+    <div class="movieData" *ngFor="let data of allmoviedata">
+        <img id="movieimg" (click)="moviedetail(data)" routerLink="/moviedetail" src="https://image.tmdb.org/t/p/w500{{data.poster_path}}">
+        <div class="titleclass" style="text-align: center; font-size: larger;">{{data.title}}</div>
+        <div *ngIf="!data.adult">U-13+</div>
+        <div *ngIf="data.adult">U-18+</div>
+        <div style="display: flex;">IMDB -&nbsp;<label style="color: sandybrown;">{{data.vote_average}}</label></div>
+        <div class="likesWishlist">
+            <div>Likes: {{data.vote_count}}</div>
+            <button id="watchlistbtn" (click)="watchlist(data)">Add to Watchlist</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="buttonNextPrevious" *ngIf="flag">
+    <button id="previous" (click)="Previousdata()">Previous</button>
+    <button id="next" (click)="Nextdata()">Next</button>
+</div>

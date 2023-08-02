@@ -1,0 +1,40 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="detaildataview" *ngIf="componentflag">
+    <img src="https://image.tmdb.org/t/p/w500{{detaildata.poster_path}}">
+    <div class="detaildataright">
+        <div class="detaildatacolumnflex">
+            <label class="header">Name</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.original_name}}</label>
+        </div>
+        <div class="detaildatacolumnflex">
+            <label class="header">Description</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.overview}}</label>
+        </div>
+        <div class="detaildatacolumnflex">
+            <label class="header">Release date</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.first_air_date}}</label>
+        </div>
+        <div class="detaildatacolumnflex">
+            <label class="header">Popularity</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.popularity}}</label>
+        </div>
+        <div class="detaildatacolumnflex">
+            <label class="header">Vote average</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.vote_average}}</label>
+        </div>
+        <div class="detaildatacolumnflex">
+            <label class="header">Vote count</label>
+            <label class="colonclass">:</label>
+            <label class="datavalue">{{detaildata.vote_count}}</label>
+        </div>
+        <div class="AddUpgradebutton">
+            <button id="watchlistbtn" (click)="tvshowwatchlist(detaildata)">Add to WatchList</button>
+            <button id="premium" routerLink="/premium">Upgrade to Premium</button>
+        </div>
+    </div>
+</div>

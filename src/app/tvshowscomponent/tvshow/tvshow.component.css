@@ -1,0 +1,74 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+.flexrow{
+    display: flex;
+    justify-content: space-between;
+}
+.searchclass{
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    margin: 30px;
+}
+
+.searchclass > label{
+    color: white;
+    font-weight: bolder;
+}
+
+.searchclass > input{
+    width: 150px;
+    font-size: 20px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px
+}
+.movieData{
+    width: 250px;
+    color: aliceblue;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    font-size: 16px;
+}
+.movieData > img{
+    width: 250px;
+    height: 250px;
+}
+
+.likesWishlist{
+    display: flex;
+    justify-content: flex-start;
+    gap: 55px;
+}
+
+.likesWishlist > button{
+    background-color: aqua;
+    padding: 5px;
+    margin-top: -10px;
+}
+
+.buttonNextPrevious{
+    display: flex;
+    margin: 30px;
+    gap: 20px;
+}
+
+.buttonNextPrevious > button{
+    background-color: rgb(255, 136, 0);
+    padding: 5px;
+    width:100px;
+    height: 30px;
+    font-size: larger;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.buttonNextPrevious > button:hover{
+    background-color: rgb(250, 181, 103);
+}

@@ -1,0 +1,36 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
+<div class="flexrow" *ngIf="componentflag">
+  <div class="searchclass">
+    <label>Search</label>
+    <input #searchInput id="searchitem" (keyup)="sendsearchdata(searchInput.value)" type="text" />
+  </div>
+  <div class="buttonNextPrevious">
+    <button id="previous" (click)="Previousdata()">Previous</button>
+    <button id="next" (click)="Nextdata()">Next</button>
+  </div>
+</div>
+<div class="mainContainer" *ngIf="componentflag">
+  <div class="movieData" id="tvShowData" *ngFor="let data of alltvshowdata">
+    <img id="picture" (click)="detaileddata(data)" routerLink="/showdetail" src="https://image.tmdb.org/t/p/w500{{ data.poster_path }}" />
+    <div style="text-align: center; font-size: larger">{{ data.original_name }}</div>
+    <!-- <div *ngIf="!data.adult">U-13+</div>
+        <div *ngIf="data.adult">U-18+</div>
+        <div style="display: flex;">IMDB -&nbsp;<label style="color: sandybrown;">{{data.vote_average}}</label></div>
+        <div class="likesWishlist">
+            <div>Likes: {{data.vote_count}}</div>
+            <button>Add to Watchlist</button>
+        </div> -->
+  </div>
+</div>
+
+<div class="buttonNextPrevious" *ngIf="componentflag">
+  <button id="previous" (click)="Previousdata()">Previous</button>
+  <button id="next" (click)="Nextdata()">Next</button>
+</div>

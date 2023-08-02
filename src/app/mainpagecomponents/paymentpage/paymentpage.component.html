@@ -1,0 +1,66 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="paymentContainer" *ngIf="flag && componentflag">
+    <div class="headerContainer">
+        <div class="headerPayment">Payment Gateway</div>
+        <div class="topHeader">
+            <img src="../../../assets/visa.jpg">
+            <img src="../../../assets/mastercard.png">
+        </div>
+    </div>
+    <div class="cardHeader">Card Information</div>
+        <form class="cardAlldata" [formGroup]="cardInfo" (ngSubmit)="paySubscription()">
+            <label>Card Number</label>
+            <input type="text" id="cardnumber" formControlName="cardnumber" pattern="[0-9\s]{13,19}" maxlength="16" placeholder="xxxx xxxx xxxx xxxx">
+            <span *ngIf="cardnumber && cardnumber.invalid && cardnumber.touched">Invalid cardnumber</span>
+            <div class="cardDetail">
+                <div class="cardMonthYear">
+                    <label>Month/year</label>
+                    <input id="monthyear" type="month" formControlName="monthyear"/>
+                    <span *ngIf="monthyear && monthyear.invalid && monthyear.touched">Invalid month/year</span>
+                </div>
+                <div class="cardCvvCode">
+                    <label>CVV</label>
+                    <input type="text" id="cvvcode" formControlName="cvvcode" placeholder="123" maxlength="3" required=""/>
+                    <span *ngIf="cvvcode && cvvcode.invalid && cvvcode.touched">Invalid CVV</span>
+                </div>
+            </div>
+            <label>Select Plan</label>
+            <select id="selectplan" name="monthplan" formControlName="plantype">
+                <option >---Select Plan---</option>
+                <option [value]="1">@99 / month</option>      
+                <option [value]="2">@279 / 3 months</option>      
+                <option [value]="3">@699 / year</option>      
+            </select>
+            <span *ngIf="plantype && plantype.invalid && plantype.touched">Invalid plantype</span>
+        </form>
+        <!-- <div class="selectPlan">
+            <label>Select Plan</label>
+            <select id="selectplan" name="monthplan">
+                <option >---Select Plan---</option>
+                <option [value]="1">@99 / month</option>      
+                <option [value]="2">@279 / 3 months</option>      
+                <option [value]="2">@699 / year</option>      
+            </select>
+            (change)="filterMovie($any($event.target).value)"
+            <div class="selectPaymetoption">
+                <input type="radio" name="1stoption"/>&nbsp;
+                <label class="typePlan">@99 / month</label>
+            </div>
+            <div class="selectPaymetoption">
+                <input type="radio" name="1stoption"/>&nbsp;
+                <label class="typePlan">@279 / 3 months</label>
+            </div>
+            <div class="selectPaymetoption">
+                <input type="radio" name="1stoption"/>&nbsp;
+                <label class="typePlan">@699 / year</label>
+            </div>
+        </div> -->
+        <button type="submit" id="payButton" [disabled]="cardInfo.invalid" class="payButton" (click)="paySubscription()">Pay</button>
+</div>
+
+<div *ngIf="!flag" class="subscribedPage">
+    <div class="subscriptionHeader">Subscription Done Successfully</div>
+    <img id="happyimg" src="../../../assets/happy.png">
+    <button class="payButton" id ="backtohomebtn" routerLink="/movies">Back to home</button>
+
+</div>

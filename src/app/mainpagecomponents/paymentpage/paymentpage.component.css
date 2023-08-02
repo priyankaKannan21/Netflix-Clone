@@ -1,0 +1,167 @@
+.paymentContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    margin: 30px 500px;
+    padding: 20px;
+}
+
+.headerContainer{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.headerPayment{
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:28px;
+    font-weight: 700;
+    color: red;
+    font-style: italic;
+}
+
+.topHeader{
+    display: flex;
+    gap: 20px;
+}
+
+.topHeader > img{
+    width: 50px;
+}
+
+.paymentContainer .cardAlldata{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    
+}
+
+.cardHeader{
+    padding: 20px;
+    font-size:24px;
+    font-weight: 700;
+    color:rgb(19, 30, 107);
+}
+
+.cardAlldata > label{
+    font-size: large;
+    font-style: italic;
+}
+
+.cardAlldata > input{
+    height: 25px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cardAlldata .cardDetail{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardDetail .cardMonthYear{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+span{
+    color: red;
+}
+
+.cardMonthYear > input{
+    width: 160px;
+    height: 25px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cardDetail .cardCvvCode{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardCvvCode > input{
+    width: 40px;
+    height: 25px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cardAlldata{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+.cardAlldata > label{
+    font-size: x-large;
+    font-weight: 600;
+    color:rgb(19, 30, 107);
+}
+
+.cardAlldata > select{
+    width: 200px;
+    height: 30px;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.typePlan{
+    margin-top: -10px;
+    font-size: 18px;
+}
+
+.payButton{
+    width: 150px;
+    margin-left: 175px;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(108, 226, 108);
+}
+
+.payButton:disabled{
+    cursor: no-drop;
+}
+
+.payButton:hover{
+    background-color: rgb(25, 204, 25);
+}
+
+.subscribedPage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    margin: 30px 500px;
+    padding: 20px;
+}
+
+.subscriptionHeader{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:28px;
+    font-weight: 700;
+    color: red;
+    font-style: italic;
+    text-align: center;
+}
+
+.subscribedPage > img{
+    width: 200px;
+    align-self: center;
+}
